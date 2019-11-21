@@ -6,9 +6,23 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "navbar.css" %>
   </head>
 
   <body>
+    <!--Navbar-->
+    <% if user_signed_in? %>
+    <%= render "navbar/navbar_logged_in"%>
+    <%else%>
+    <%= render "navbar/navbar_not_logged_in"%>
+    <%end%>
+    <!---->
+
+  	<!--Devise notice --> 
+  	   <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+    <!---->
+    
     <%= yield %>
   </body>
 </html>

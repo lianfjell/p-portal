@@ -1,0 +1,70 @@
+<head>
+  <%= stylesheet_link_tag "sign_up_page.css" %>
+</head>
+
+
+
+<%= render "devise/shared/error_messages", resource: resource %>
+
+<div class="container register">
+  <div class="row">
+    <div class="col-md-3 register-left">
+      <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+      <h3>Welcome</h3>
+      <p>You are 30 seconds away from earning your own money!</p>
+       <form action="/users/sign_in">
+    <input type="submit" value="Logg inn" />
+    </form>
+    </div>
+
+
+    <div class="col-md-9 register-right">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <h3 class="register-heading">Registrer deg</h3>
+          <div class="row register-form">
+            <div class="col-md-6">
+              <div class="form-group">
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= f.text_field :first_name, class: 'form-control', placeholder:'Fornavn *'  %>
+              </div>
+              <div class="form-group">
+                <%= f.text_field :last_name, class: 'form-control', placeholder:'Fornavn *'  %>
+              </div>
+              <div class="form-group">
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'E-post *' %>
+              </div>
+              <div class="form-group">
+                <%= f.text_field :method, class: 'form-control', placeholder:'Arbeidsmetodikk *'  %>
+              </div>
+              <div class="form-group">
+                <%= f.text_field :title, class: 'form-control', placeholder:'Tittel *'  %>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <%= f.text_field :workplace, class: 'form-control', placeholder:'Arbeidsplass *'  %>
+              </div>
+              <div class="form-group">
+                <%= f.text_field :workcommune, class: 'form-control', placeholder:'Arbeidskommune *'  %>
+              </div>
+              <div class="form-group">
+                <%= f.text_field :competance, class: 'form-control', placeholder:'Kompetanse *'  %>
+              </div>
+              <div class="form-group">
+                <%= f.password_field :password, autocomplete: "Nytt passord", class: 'form-control', placeholder:'Nytt passord'  %>
+              </div>
+              <div class="form-group">
+                <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Bekreft passord' %>
+              </div>
+              <input type="submit" class="btnRegister"  value="Register"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<% end %>
