@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Authors:</strong>
+  <%= @article.authors %>
+</p>
+
+<p>
+  <strong>Abstract:</strong>
+  <%= @article.abstract %>
+</p>
+
+<p>
+  <strong>Doi:</strong>
+  <%= @article.doi %>
+</p>
+
+<p>
+  <strong>Journal:</strong>
+  <%= @article.journal %>
+</p>
+
+<p>
+  <strong>Volume:</strong>
+  <%= @article.volume %>
+</p>
+
+<p>
+  <strong>Issue:</strong>
+  <%= @article.issue %>
+</p>
+
+<p>
+  <strong>Page:</strong>
+  <%= @article.page %>
+</p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>
