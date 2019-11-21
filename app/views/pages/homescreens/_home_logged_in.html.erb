@@ -1,5 +1,24 @@
   <%= stylesheet_link_tag "home_logged_in.css" %>
 
 <div class="container">
-	<a href="/articles/new" class="btn btn-primary article_upload_button">Last opp artikkel</a> 
+	<div class="row">
+		<div class="col-3">
+		</div>
+		<div class="col-6">
+		  <% @articles.each do |article| %>
+		   <div class="card article-container">
+             <div class="card-body">
+               <h5 class="card-title"><%= article.title%></h5>
+               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+               <%= link_to 'Les mer', article, class: 'btn btn-primary'%>
+             </div>
+           </div>
+		    <%end%>
+		</div>
+		<div class="col-3">
+		  <a href="/articles/new" class="btn btn-primary article_upload_button">Last opp artikkel</a> 
+		</div>
+	</div>
 </div>
+
+

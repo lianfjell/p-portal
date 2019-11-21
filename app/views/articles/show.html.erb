@@ -1,46 +1,41 @@
+<%= stylesheet_link_tag "articles.css" %>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
 
-<p>
-  <strong>Authors:</strong>
-  <%= @article.authors %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-3 info-block">
+      <div class="card">
+        <div class="card-body">
+          <p>Forfattere: <%= @article.authors %></p>
+          <p>Doi: <%= @article.doi %></p>
+          <p>Journal: <%= @article.journal %></p>
+          <p>Volum: <%= @article.volume %></p>
+          <p>Utgave: <%= @article.issue %></p>
+          <p>Side: <%= @article.page %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <h2><%= @article.title %></h2>
+      <p><%= @article.abstract %></p>
+    </div>
+    <div class="col-3">
+    </div>
+  </div>
 
-<p>
-  <strong>Abstract:</strong>
-  <%= @article.abstract %>
-</p>
+  <div class="row">
+    <div class="col-2">
+    </div>
+    <div class="col-8">
+      <iframe src="<%= @article.document %>" style="width: 100%; height: 40em;"></iframe>
+    </div>
+    <div class="col-2">
+    </div>
 
-<p>
-  <strong>Doi:</strong>
-  <%= @article.doi %>
-</p>
-
-<p>
-  <strong>Journal:</strong>
-  <%= @article.journal %>
-</p>
-
-<p>
-  <strong>Volume:</strong>
-  <%= @article.volume %>
-</p>
-
-<p>
-  <strong>Issue:</strong>
-  <%= @article.issue %>
-</p>
-
-<p>
-  <strong>Page:</strong>
-  <%= @article.page %>
-</p>
-
-<iframe src="<%= @article.document %>" style="width: 100%; height: 40em;"></iframe>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
