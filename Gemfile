@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#file attachment
+gem "paperclip", "~> 6.0.0"
 #user authentication
 gem 'devise'
 #jQuery

@@ -1,3 +1,4 @@
+
 <%= form_with(model: article, local: true) do |form| %>
   <% if article.errors.any? %>
     <div id="error_explanation">
@@ -11,47 +12,63 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :article_title %>
+
+<div class="row">
+  <div class="col-sm-3">
+  </div>
+  <div class="col-sm-6">
+<div class="card">
+  <div class="card-body">
+    <form>
+  <div class="form-group">
+    <label>Tittel</label>
+    <%= form.text_field :title, id: :article_title, class: "form-control", placeholder: 'Tittel' %>
+  </div>
+   <div class="form-group">
+    <label>Forfattere</label>
+    <%= form.text_field :authors, id: :article_authors, class: "form-control", placeholder: 'Forfattere' %>
+  </div>
+   <div class="form-group">
+    <label>Abstract</label>
+    <%= form.text_field :abstract, id: :article_abstract, class: "form-control", placeholder: 'Abstract' %>
+  </div>
+   <div class="form-group">
+    <label>Journal</label>
+     <%= form.text_field :journal, id: :article_journal, class: "form-control", placeholder: 'Journal' %>
+  </div>
+   <div class="form-group">
+    <label>DOI</label>
+    <%= form.text_field :doi, id: :article_doi, class: "form-control", placeholder: 'DOI' %>
+  </div>
+     <div class="form-group">
+    <label>Volume</label>
+    <%= form.text_field :volume, id: :article_volume, class: "form-control", placeholder: 'Volume' %>
+  </div>
+  <div class="form-group">
+    <label>Issue</label>
+    <%= form.text_field :issue, id: :article_issue, class: "form-control", placeholder: 'Issue' %>
+  </div>
+   <div class="form-group">
+    <label>Side</label>
+    <%= form.text_field :page, id: :article_page, class: "form-control", placeholder: 'Page' %>
   </div>
 
-  <div class="field">
-    <%= form.label :authors %>
-    <%= form.text_field :authors, id: :article_authors %>
+  <div class="form-group">
+    <label>Last opp dokument(.pdf)</label>
+    <%= form.file_field :document, class: 'btn btn-outline-primary'%>
   </div>
 
-  <div class="field">
-    <%= form.label :abstract %>
-    <%= form.text_field :abstract, id: :article_abstract %>
+  <div class="form-group">
+    <%= form.submit 'Last opp', class: 'btn btn-primary' %>
   </div>
 
-  <div class="field">
-    <%= form.label :doi %>
-    <%= form.text_field :doi, id: :article_doi %>
+  
+</form>
   </div>
+</div>
+<div class="col-sm-3">
+</div>
+</div>
+</div>
+<%end%>
 
-  <div class="field">
-    <%= form.label :journal %>
-    <%= form.text_field :journal, id: :article_journal %>
-  </div>
-
-  <div class="field">
-    <%= form.label :volume %>
-    <%= form.text_field :volume, id: :article_volume %>
-  </div>
-
-  <div class="field">
-    <%= form.label :issue %>
-    <%= form.text_field :issue, id: :article_issue %>
-  </div>
-
-  <div class="field">
-    <%= form.label :page %>
-    <%= form.text_field :page, id: :article_page %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
