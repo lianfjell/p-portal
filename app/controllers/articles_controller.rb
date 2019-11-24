@@ -4,7 +4,16 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @search = Article.search do 
+      fulltext params[:search]
+
+      with :title, params[:title] if params[:title].present?
+      with :abstract, params[:abstract] if params[:abstract].present?
+      with :authors, params[:authors] if params[:authors].present?
+      with :journal, params[:journal] if params[:journal].present?
+    end
+
+    @articles = @search.results
   end
 
   # GET /articles/1

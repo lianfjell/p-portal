@@ -11,6 +11,9 @@
           <li class="nav-item">
               <%= link_to('Rediger bruker', edit_user_registration_path) %>
           </li>
+           <li class="nav-item">
+              <%= link_to('Profil', user_path(current_user), class: "dropdown-item")%>
+          </li>
           <li class="nav-item">
             <%= link_to('Logg ut', destroy_user_session_path, method: :delete) %>        
           </li>         

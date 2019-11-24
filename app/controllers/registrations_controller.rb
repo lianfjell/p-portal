@@ -1,13 +1,14 @@
-class RegistrationsController < Devise::RegistrationsController
+class UsersController < ApplicationController
 	  
 
 	  private
 
   def sign_up_params
-    params.require(:user).permit(:first_name, :last_name, :email, :title, :workplace, :workcommune, :competance, :method )
+    params.require(:user).permit(:first_name, :last_name, :email, :title, :workplace, :workcommune, :competance, :method)
   end
 
   def account_update_params
     params.require(:user).permit(:first_name, :last_name, :email, :title, :workplace, :workcommune, :competance, :method)
   end
 
+end
