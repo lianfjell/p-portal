@@ -13,6 +13,10 @@
           <p>Volum: <%= @article.volume %></p>
           <p>Utgave: <%= @article.issue %></p>
           <p>Side: <%= @article.page %></p>
+          <p>Lastet opp av: <%= link_to @article.user do %> 
+          <%= @article.user.first_name %> <%= @article.user.last_name%> 
+          <%end%>
+          </p>
         </div>
       </div>
     </div>

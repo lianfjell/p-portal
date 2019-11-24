@@ -8,7 +8,8 @@
   			<div class="card search-card">
   				<div class="card-body">
   					<div class="card-title">
-  						<h5>Søk etter artikler</h5>
+  						<h6>Søk etter artikler
+              <a href="/articles/new" class="btn btn-primary article_upload_button">Last opp artikkel</a></h6>
   					</div>
   					<!-- Search form -->
   					<div class="md-form mt-0">
@@ -16,8 +17,8 @@
               			<%= text_field_tag :search, params[:search], placeholder: "Søk blant #{Article.count} artikler", class: "form-control", id: 'searchfield'%>
   					</div>
   					<!---->
-  					<a href="#" class="card-link">Avansert søk</a>
   				</div>
+           <span class="search-box-links"><a href="#" class="card-link">Avansert søk</a></span>
   			</div>
 
   			<ul class="nav nav-tabs">
@@ -45,7 +46,6 @@
   			<%end%>
   		</div>
   		<div class="col-lg-3">
-  			<a href="/articles/new" class="btn btn-primary article_upload_button">Last opp artikkel</a> 
   		</div>
   	</div>
   </div>

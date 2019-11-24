@@ -1,8 +1,11 @@
 
-<p><%= current_user.first_name %> <%= current_user.last_name %></p>
-<p><%= current_user.title %></p>
-<p><%= current_user.workcommune %></p>
-<p><%= current_user.email %></p>
-<p><%= current_user.competance %></p>
-<p><%= current_user.workplace %></p>
-<p><%= current_user.method %></p>
+<p><%= @user.first_name %> <%= @user.last_name %></p>
+<p><%= @user.title %></p>
+<p><%= @user.workcommune %></p>
+<p><%= @user.email %></p>
+<p><%= @user.competance %></p>
+<p><%= @user.workplace %></p>
+<p><%= @user.method %></p>
+<% @articles.each do |article| %>
+<%= link_to article.title, article_path %>
+<%end%>
