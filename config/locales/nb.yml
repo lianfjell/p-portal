@@ -31,17 +31,17 @@ nb:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: rundt 1 time
-        other: rundt %{count} timer
+        one: 1 t
+        other:  '%{count} t'
       about_x_months:
-        one: rundt 1 måned
-        other: rundt %{count} måneder
+        one: 1 mnd
+        other: '%{count} mnd'
       about_x_years:
-        one: rundt 1 år
-        other: rundt %{count} år
+        one: 1 år
+        other: '%{count} år'
       almost_x_years:
-        one: nesten 1 år
-        other: nesten %{count} år
+        one: 1 år
+        other: '%{count} år'
       half_a_minute: et halvt minutt
       less_than_x_minutes:
         one: mindre enn 1 minutt
