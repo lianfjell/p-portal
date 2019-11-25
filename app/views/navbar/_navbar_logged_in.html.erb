@@ -9,6 +9,9 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
+          <%= image_tag current_user.avatar.url(:nav_thumb), class: 'rounded-image'%>
+          </li>
+          <li class="nav-item">
               <%= link_to('Rediger bruker', edit_user_registration_path) %>
           </li>
            <li class="nav-item">

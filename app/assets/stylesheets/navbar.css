@@ -91,3 +91,7 @@
     color: #fdcc52;
   }
 }
+
+.rounded-image {
+  border-radius:50%;
+}
