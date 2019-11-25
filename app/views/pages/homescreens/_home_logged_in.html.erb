@@ -9,45 +9,47 @@
   				<div class="card-body">
   					<div class="card-title">
   						<h6>Søk etter artikler
-              <a href="/articles/new" class="btn btn-primary article_upload_button">Last opp artikkel</a></h6>
-  					</div>
-  					<!-- Search form -->
-  					<div class="md-form mt-0">
-  						  <%= form_tag articles_path, :method => :get do %>
-              			<%= text_field_tag :search, params[:search], placeholder: "Søk blant #{Article.count} artikler", class: "form-control", id: 'searchfield'%>
-  					</div>
-  					<!---->
-  				</div>
-           <span class="search-box-links"><a href="#" class="card-link">Avansert søk</a></span>
-  			</div>
+                <a href="/articles/new" class="btn btn-primary article_upload_button">Last opp artikkel</a></h6>
+              </div>
+              <!-- Search form -->
+              <div class="md-form mt-0">
+                <%= form_tag articles_path, :method => :get do %>
+                <%= text_field_tag :search, params[:search], placeholder: "Søk blant #{Article.count} artikler", class: "form-control", id: 'searchfield'%>
+              </div>
+              <!---->
+            </div>
+            <span class="search-box-links"><a href="#" class="card-link">Avansert søk</a></span>
+          </div>
 
-  			<ul class="nav nav-tabs">
-  				<li class="nav-item">
-  					<a class="nav-link active" href="#">Siste</a>
-  				</li>
-  				<li class="nav-item">
-  					<a class="nav-link" href="#">Populære akkurat nå</a>
-  				</li>
-  				<li class="nav-item">
-  					<a class="nav-link" href="#">Høyest rangerte</a>
-  				</li>
-  			</ul>
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+             <a class="nav-link active" href="#">Siste</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="#">Populære akkurat nå</a>
+           </li>
+           <li class="nav-item">
+             <a class="nav-link" href="#">Høyest rangerte</a>
+           </li>
+         </ul>
 
 
-  			<% @articles.each do |article| %>
-  			<div class="card article-container">
-  				<div class="card-body">
-  					<h5 class="card-title"><%= article.title%></h5>
-  					<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  					<%= link_to 'Les mer', article, class: 'btn btn-primary'%>
-  				</div>
-  			</div>
-  			<%end%>
-  			<%end%>
-  		</div>
-  		<div class="col-lg-3">
-  		</div>
-  	</div>
-  </div>
+         <% @articles.each do |article| %>
+         <div class="card article-container">
+          <div class="card-body">
+            <%= article.user.first_name %> <%= article.user.last_name %> lastet opp en artikkel 
+            <%= time_ago_in_words(article.created_at)%> siden
+           <h5 class="card-title"><%= article.title%></h5>
+           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+           <%= link_to 'Les mer', article, class: 'btn btn-primary'%>
+         </div>
+       </div>
+       <%end%>
+       <%end%>
+     </div>
+     <div class="col-lg-3">
+     </div>
+   </div>
+ </div>
 
 
