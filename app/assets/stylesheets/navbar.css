@@ -92,3 +92,7 @@
 .rounded-image {
   border-radius:50%;
 }
+
+.dropdown-item{
+  font-size: 13px;
+}
