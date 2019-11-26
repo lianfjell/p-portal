@@ -1,0 +1,37 @@
+body {
+	background-color: #eae9e9;
+}
+
+.profile-image {
+	border-radius:50%;
+	float:left;
+	margin-right:2em;
+}
+
+.box {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	margin-bottom: 0.5em;
+}
+
+#pills-tab {
+	margin-top:2em;
+	float:left;
+}
+
+.content-row {
+	margin-top:2em;
+}
+
+.content-container {
+	background-color: grey;
+}
+
+.card {
+	border-radius: 0%;
+}
+
+.article-card {
+ box-shadow: 0.2px 0.2px 1px grey;
+}
